@@ -14,7 +14,7 @@
 - **Course Title:** Formal Language and Automata Theory (FLAT)
 - **Institution:** Kalvium Community / Engineering Microproject
 - **Project Title:** Interactive Educational Visualizer & Algorithmic Simulator for Automata Theory (Modules 1, 2, and 3)
-- **Deployed Application Link:** https://kunalyadav-flat-microproject.vercel.app *(configured for GitHub Pages / Vercel)*
+- **Deployed Application Link:** https://kunalflat.vercel.app/
 - **GitHub Repository Link:** https://github.com/kunalyadav47/FLAT_microproject
 
 ---

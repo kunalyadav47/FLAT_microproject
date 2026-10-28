@@ -13,7 +13,7 @@
 - **Course Subject:** Formal Language and Automata Theory (FLAT)
 - **Academic Session:** October 2026
 - **GitHub Repository Link:** [https://github.com/kunalyadav47/FLAT_microproject](https://github.com/kunalyadav47/FLAT_microproject)
-- **Deployed Application Link:** [https://kunalyadav-flat-microproject.vercel.app](https://kunalyadav-flat-microproject.vercel.app) *(also deployable to GitHub Pages)*
+- **Deployed Application Link:** [https://kunalflat.vercel.app/](https://kunalflat.vercel.app/)
 
 ---
 
