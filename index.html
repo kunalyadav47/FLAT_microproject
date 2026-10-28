@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formal Language & Automata Theory (FLAT) Interactive Educational Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Header & Student Academic Identity -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-area">
+        <div class="brand-icon">⚙️</div>
+        <div class="brand-title">
+          <h1>FLAT Automata Theory Interactive Studio</h1>
+          <p>Educational Visualizer & Algorithmic Simulator for Formal Languages (Modules 1, 2, 3)</p>
+        </div>
+      </div>
+      <div class="student-badge-card">
+        <div class="student-meta-item">
+          <span class="label">Student Name</span>
+          <span class="value">Kunal Yadav</span>
+        </div>
+        <div class="student-meta-item">
+          <span class="label">Roll Number</span>
+          <span class="value">2411021060008</span>
+        </div>
+        <div class="student-meta-item">
+          <span class="label">Squad / Course</span>
+          <span class="value">Squad 70 | FLAT</span>
+        </div>
+        <div class="student-meta-item">
+          <span class="label">Submission</span>
+          <span class="value">October 2026</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tab Bar -->
+  <nav class="nav-tabs-container">
+    <div class="nav-tabs" id="navTabs">
+      <button class="nav-tab-btn active" data-tab="tab-overview">
+        <span>📖 Syllabus Overview</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-module1">
+        <span class="tab-badge">M1</span>
+        <span>Alphabets & Languages</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-module2a">
+        <span class="tab-badge">M2A</span>
+        <span>Automata Simulator & Tracer</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-module2b">
+        <span class="tab-badge">M2B</span>
+        <span>RegEx ➔ NFA ➔ DFA</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-module2c">
+        <span class="tab-badge">M2C</span>
+        <span>DFA Minimization</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-module3a">
+        <span class="tab-badge">M3A</span>
+        <span>CFG Trees & Ambiguity</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-module3b">
+        <span class="tab-badge">M3B</span>
+        <span>CFG Simplification & CNF</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-module3c">
+        <span class="tab-badge">M3C</span>
+        <span>PDA & Stack Simulator</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-pumping">
+        <span class="tab-badge">TH</span>
+        <span>Pumping Lemma Labs</span>
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-tests">
+        <span class="tab-badge">70✔</span>
+        <span>Test Suite & Report</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Space -->
+  <main class="main-content">
+
+    <!-- ==========================================
+         TAB 0: SYLLABUS OVERVIEW & ARCHITECTURE
+         ========================================== -->
+    <section id="tab-overview" class="tab-pane active">
+      <div class="module-banner">
+        <div>
+          <h2>Formal Language and Automata Theory (FLAT) Microproject</h2>
+          <p>Comprehensive interactive implementation addressing all 3 syllabus modules from the curriculum.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">3 Modules Fully Implemented</span>
+          <span class="tag-pill">Zero External Dependencies</span>
+          <span class="tag-pill">70 Verified Unit Tests</span>
+        </div>
+      </div>
+
+      <div class="grid-3col">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>🌐 Module 1: Formal Languages & RegEx</h3>
+          </div>
+          <div class="panel-card-body">
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+              Covers core linguistic theory, alphabets ($\Sigma$), string transformations, language closures, and regular expressions.
+            </p>
+            <ul style="font-size: 0.84rem; color: var(--text-main); margin-left: 1.2rem; line-height: 1.8;">
+              <li>Alphabets, $\Sigma^k$, Kleene star $\Sigma^*$ generator</li>
+              <li>Prefixes, Suffixes, Substrings, Reversals ($w^R$)</li>
+              <li>Language operations: Union, Concatenation, Kleene</li>
+              <li>Syntax parser, Precedence, Postfix conversion</li>
+            </ul>
+            <div style="margin-top: 1.5rem;">
+              <button class="btn btn-secondary" onclick="switchTab('tab-module1')">Explore Module 1 ➔</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>⚙️ Module 2: Finite Automata & Minimization</h3>
+          </div>
+          <div class="panel-card-body">
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+              Full algorithmic pipelines for Deterministic and Non-deterministic Finite Automata, subset conversion, and minimization.
+            </p>
+            <ul style="font-size: 0.84rem; color: var(--text-main); margin-left: 1.2rem; line-height: 1.8;">
+              <li>Thompson's Construction (RegEx ➔ $\epsilon$-NFA)</li>
+              <li>Subset Construction (Powerset $\epsilon$-closure ➔ DFA)</li>
+              <li>Interactive String Tracer with tape head and SVG glow</li>
+              <li>Myhill-Nerode Table-Filling Minimization matrix</li>
+            </ul>
+            <div style="margin-top: 1.5rem;">
+              <button class="btn btn-primary" onclick="switchTab('tab-module2a')">Launch Simulator ➔</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>🥞 Module 3: CFG, Normal Forms & PDA</h3>
+          </div>
+          <div class="panel-card-body">
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+              Context-free languages, hierarchical parse trees, ambiguity demonstrations, grammar simplification, and pushdown automata.
+            </p>
+            <ul style="font-size: 0.84rem; color: var(--text-main); margin-left: 1.2rem; line-height: 1.8;">
+              <li>Context-Free Grammar parser & Leftmost derivation</li>
+              <li>SVG Parse Tree visualizer with recursive branches</li>
+              <li>Ambiguity detector with side-by-side tree comparison</li>
+              <li>$\epsilon$-removal, Unit-removal, Useless-removal, CNF</li>
+              <li>Pushdown Automata (PDA) with animated vertical stack</li>
+            </ul>
+            <div style="margin-top: 1.5rem;">
+              <button class="btn btn-emerald" onclick="switchTab('tab-module3c')">Simulate PDA ➔</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 1: MODULE 1 ALPHABETS & LANGUAGES
+         ========================================== -->
+    <section id="tab-module1" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Module 1: Alphabets, Strings, Operations & Regular Expressions</h2>
+          <p>Explore formal language mechanics, combinatorial operations on strings, and regular expression precedence parsing.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">Σ* Generator</span>
+          <span class="tag-pill">String Calculus</span>
+          <span class="tag-pill">Shunting-Yard RegEx</span>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <!-- String & Alphabet Workbench -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>🔤 String & Alphabet Operations Laboratory</h3>
+          </div>
+          <div class="panel-card-body">
+            <div class="form-group">
+              <label for="m1-alphabet">Alphabet Σ (comma-separated):</label>
+              <input type="text" id="m1-alphabet" class="input-text" value="0, 1">
+            </div>
+            <div class="form-group">
+              <label for="m1-k">Generate Σᵏ (Power k):</label>
+              <input type="number" id="m1-k" class="input-text" value="2" min="0" max="4">
+            </div>
+            <button class="btn btn-primary" id="m1-btn-gensigma">Compute Σᵏ</button>
+
+            <div style="margin-top: 1rem;">
+              <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Resulting Strings Set:</label>
+              <div id="m1-sigma-result" class="derivation-steps-box" style="margin-top: 0.4rem; max-height: 120px;">
+                {00, 01, 10, 11}
+              </div>
+            </div>
+
+            <hr style="border-color: var(--border-color); margin: 1.5rem 0;">
+
+            <div class="form-group">
+              <label for="m1-test-word">Sample String w:</label>
+              <input type="text" id="m1-test-word" class="input-text" value="automata">
+            </div>
+            <button class="btn btn-secondary" id="m1-btn-analyzestring">Decompose String w</button>
+
+            <div id="m1-string-analysis" style="margin-top: 1rem; font-size: 0.85rem; line-height: 1.8;">
+              <p><strong>Reversal (wᴿ):</strong> <span id="m1-reversal" style="color: var(--accent-cyan); font-family: var(--font-mono);">atamotua</span></p>
+              <p><strong>Prefixes:</strong> <span id="m1-prefixes" style="color: var(--accent-emerald); font-family: var(--font-mono);">{ε, a, au, aut, auto, autom, automa, automat, automata}</span></p>
+              <p><strong>Suffixes:</strong> <span id="m1-suffixes" style="color: var(--accent-amber); font-family: var(--font-mono);">{ε, a, ta, ata, mata, omata, tomata, utomata, automata}</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Language Operations & RegEx Precedence -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>📐 Operations on Languages & RegEx Syntax</h3>
+          </div>
+          <div class="panel-card-body">
+            <div class="form-group">
+              <label for="m1-lang-l1">Language L₁ (comma-separated):</label>
+              <input type="text" id="m1-lang-l1" class="input-text" value="a, ab">
+            </div>
+            <div class="form-group">
+              <label for="m1-lang-l2">Language L₂ (comma-separated):</label>
+              <input type="text" id="m1-lang-l2" class="input-text" value="b, ba">
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-secondary" id="m1-btn-union">Union (L₁ ∪ L₂)</button>
+              <button class="btn btn-secondary" id="m1-btn-concat">Concatenation (L₁L₂)</button>
+              <button class="btn btn-secondary" id="m1-btn-kleene">Kleene Star (L₁*)</button>
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Language Operation Output:</label>
+              <div id="m1-lang-result" class="derivation-steps-box" style="margin-top: 0.4rem; max-height: 100px;">
+                Ready for computation.
+              </div>
+            </div>
+
+            <hr style="border-color: var(--border-color); margin: 1.5rem 0;">
+
+            <div class="form-group">
+              <label for="m1-regex-input">Regular Expression Parser (Infix to Postfix):</label>
+              <input type="text" id="m1-regex-input" class="input-text" value="(a|b)*abb">
+            </div>
+            <button class="btn btn-primary" id="m1-btn-parse-regex">Parse Precedence & Postfix</button>
+
+            <div style="margin-top: 1rem; font-size: 0.85rem; line-height: 1.8;">
+              <p><strong>Explicit Concatenation:</strong> <span id="m1-explicit-regex" style="color: var(--accent-cyan); font-family: var(--font-mono);">(a|b)*.a.b.b</span></p>
+              <p><strong>Postfix Polish Notation:</strong> <span id="m1-postfix-regex" style="color: var(--accent-emerald); font-family: var(--font-mono);">ab|*a.b.b.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 2A: AUTOMATA SIMULATOR & STRING TRACER
+         ========================================== -->
+    <section id="tab-module2a" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Module 2A: Interactive Automaton Simulator & Step-by-Step String Tracer</h2>
+          <p>Real-time execution of Deterministic (DFA) and Non-Deterministic (NFA) finite automata with tape head tracking and dynamic state highlights.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">DFA & NFA</span>
+          <span class="tag-pill">Step Tracer</span>
+          <span class="tag-pill">SVG State Highlighting</span>
+        </div>
+      </div>
+
+      <div class="grid-sidebar">
+        <!-- Controls Column -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>⚙️ Automaton Configuration</h3>
+          </div>
+          <div class="panel-card-body">
+            <div class="form-group">
+              <label for="m2a-preset-select">Select Standard Preset:</label>
+              <select id="m2a-preset-select" class="select-input">
+                <option value="ends_ab">Ends with 'ab' (L = (a|b)*ab)</option>
+                <option value="even0_odd1">Even 0s and Odd 1s</option>
+                <option value="div_by_3">Binary Numbers Divisible by 3</option>
+                <option value="c_identifier">Identifier Format ([a-zA-Z_][0-9a-zA-Z_]*)</option>
+                <option value="dustbin_id">Campus Dustbin ID Validator (Bdd)</option>
+                <option value="nfa_branching">Non-deterministic NFA (Parallel Branching)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="m2a-input-string">Input String to Trace:</label>
+              <input type="text" id="m2a-input-string" class="input-text" value="abb">
+            </div>
+
+            <div class="btn-group" style="margin-bottom: 1rem;">
+              <button class="btn btn-primary" id="m2a-btn-step-fwd">Step ➔</button>
+              <button class="btn btn-secondary" id="m2a-btn-play">▶ Play</button>
+              <button class="btn btn-secondary" id="m2a-btn-pause">⏸ Pause</button>
+              <button class="btn btn-secondary" id="m2a-btn-reset">↺ Reset</button>
+            </div>
+
+            <div class="form-group">
+              <label for="m2a-speed">Animation Speed (ms):</label>
+              <input type="range" id="m2a-speed" min="200" max="1500" step="100" value="700" style="width: 100%;">
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <span id="m2a-status-badge" class="badge-status badge-running">READY</span>
+            </div>
+
+            <div style="margin-top: 1rem; font-size: 0.82rem; color: var(--text-muted);">
+              <p id="m2a-automaton-meta">States: 3 | Alphabet: {a, b} | Start: q0 | Accept: {q2}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Canvas & Step Tape Column -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>🎨 State Transition Diagram (SVG)</h3>
+              <span id="m2a-active-state-display" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">Active: q0</span>
+            </div>
+            <div class="panel-card-body" style="padding: 0.75rem;">
+              <div class="canvas-wrapper">
+                <svg id="m2a-svg-canvas" class="automata-svg"></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tape Head & Step Log -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>📼 Input Tape & Trace Log</h3>
+            </div>
+            <div class="panel-card-body">
+              <div id="m2a-tape-container" class="tape-container">
+                <!-- Generated dynamically -->
+              </div>
+
+              <div class="table-responsive" style="max-height: 200px;">
+                <table class="data-table" id="m2a-trace-table">
+                  <thead>
+                    <tr>
+                      <th>Step</th>
+                      <th>State</th>
+                      <th>Consumed</th>
+                      <th>Remaining</th>
+                      <th>Transition Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Injected rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 2B: REGEX TO NFA & NFA TO DFA
+         ========================================== -->
+    <section id="tab-module2b" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Module 2B: Thompson's Construction & Subset Construction (Powerset Algorithm)</h2>
+          <p>Synthesize an $\epsilon$-NFA directly from a Regular Expression, then compute $\epsilon$-closures to construct an equivalent minimal DFA.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">Thompson's NFA</span>
+          <span class="tag-pill">ε-Closure</span>
+          <span class="tag-pill">Subset Construction</span>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-bottom: 1.5rem;">
+        <div class="panel-card-header">
+          <h3>⚡ RegEx Pipeline Input</h3>
+        </div>
+        <div class="panel-card-body">
+          <div style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
+            <div class="form-group" style="flex: 1; min-width: 250px; margin-bottom: 0;">
+              <label for="m2b-regex-input">Enter Regular Expression (supports |, ., *, +, ()):</label>
+              <input type="text" id="m2b-regex-input" class="input-text" value="(a|b)*abb">
+            </div>
+            <div class="form-group" style="flex: 1; min-width: 200px; margin-bottom: 0;">
+              <label for="m2b-test-string">Test String on Both:</label>
+              <input type="text" id="m2b-test-string" class="input-text" value="abb">
+            </div>
+            <button class="btn btn-primary" id="m2b-btn-build">Generate NFA & DFA ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <!-- NFA Column -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>1️⃣ Thompson's ε-NFA</h3>
+            <span id="m2b-nfa-stats" style="font-size: 0.78rem; color: var(--accent-cyan);">States: -</span>
+          </div>
+          <div class="panel-card-body">
+            <div class="canvas-wrapper" style="min-height: 320px;">
+              <svg id="m2b-nfa-svg" class="automata-svg"></svg>
+            </div>
+            <div style="margin-top: 1rem;">
+              <span id="m2b-nfa-test-result" class="badge-status badge-running">TEST PENDING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Converted DFA Column -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>2️⃣ Equivalent DFA via Subset Construction</h3>
+            <span id="m2b-dfa-stats" style="font-size: 0.78rem; color: var(--accent-emerald);">States: -</span>
+          </div>
+          <div class="panel-card-body">
+            <div class="canvas-wrapper" style="min-height: 320px;">
+              <svg id="m2b-dfa-svg" class="automata-svg"></svg>
+            </div>
+            <div style="margin-top: 1rem;">
+              <span id="m2b-dfa-test-result" class="badge-status badge-running">TEST PENDING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subset Construction Table Derivation -->
+      <div class="panel-card" style="margin-top: 1.5rem;">
+        <div class="panel-card-header">
+          <h3>📊 Subset Construction Derivation Table</h3>
+        </div>
+        <div class="panel-card-body">
+          <div class="table-responsive">
+            <table class="data-table" id="m2b-subset-table">
+              <thead>
+                <tr>
+                  <th>DFA State</th>
+                  <th>NFA State Composition</th>
+                  <th>Input Symbol</th>
+                  <th>Move(NFA, symbol)</th>
+                  <th>ε-Closure (Target DFA State)</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rows injected dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 2C: DFA MINIMIZATION VISUALIZER
+         ========================================== -->
+    <section id="tab-module2c" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Module 2C: DFA State Minimization (Table-Filling / Myhill-Nerode Theorem)</h2>
+          <p>Prune unreachable states, construct the triangular distinguishability matrix, find equivalent states, and synthesize the minimal quotient DFA.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">Myhill-Nerode</span>
+          <span class="tag-pill">Table-Filling</span>
+          <span class="tag-pill">Quotient DFA</span>
+        </div>
+      </div>
+
+      <div class="grid-sidebar">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>📉 Minimization Presets</h3>
+          </div>
+          <div class="panel-card-body">
+            <div class="form-group">
+              <label for="m2c-preset-select">Select Redundant DFA Case:</label>
+              <select id="m2c-preset-select" class="select-input">
+                <option value="redundant_6state">Standard 6-State DFA with Unreachable & Equivalent States</option>
+                <option value="redundant_8state">8-State Complex DFA with Multiple Equivalent Partitions</option>
+                <option value="from_module2b">Use Resulting DFA from Module 2B</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" id="m2c-btn-run-minimizer" style="width: 100%;">Execute Table-Filling Algorithm</button>
+
+            <div style="margin-top: 1.5rem; font-size: 0.82rem; line-height: 1.8;">
+              <p><strong>Original States:</strong> <span id="m2c-orig-count" style="color: var(--accent-amber);">-</span></p>
+              <p><strong>Unreachable States:</strong> <span id="m2c-unreach-count" style="color: var(--accent-rose);">-</span></p>
+              <p><strong>Minimal Quotient States:</strong> <span id="m2c-min-count" style="color: var(--accent-emerald);">-</span></p>
+              <p><strong>Equivalence Classes:</strong> <span id="m2c-equiv-classes" style="font-family: var(--font-mono); color: var(--accent-cyan);">-</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- Triangular Distinguishability Matrix -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>📐 Triangular Distinguishability Matrix (Table-Filling)</h3>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Hover cell for distinguishability proof</span>
+            </div>
+            <div class="panel-card-body" style="text-align: center;">
+              <div id="m2c-matrix-container" style="overflow-x: auto;">
+                <!-- Matrix injected dynamically -->
+              </div>
+              <div id="m2c-matrix-tooltip" style="margin-top: 0.85rem; font-size: 0.82rem; font-family: var(--font-mono); color: var(--accent-cyan); min-height: 24px;">
+                Click or hover over any marked cell (X) to see why states are distinguishable.
+              </div>
+            </div>
+          </div>
+
+          <!-- Minimal DFA Diagram -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>✨ Synthesized Minimal Quotient DFA</h3>
+            </div>
+            <div class="panel-card-body">
+              <div class="canvas-wrapper" style="min-height: 300px;">
+                <svg id="m2c-min-dfa-svg" class="automata-svg"></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 3A: CFG TREES & AMBIGUITY
+         ========================================== -->
+    <section id="tab-module3a" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Module 3A: Context-Free Grammars, Derivations & Ambiguity Visualizer</h2>
+          <p>Generate Leftmost and Rightmost Derivations, render dynamic SVG parse trees, and demonstrate grammatical ambiguity side-by-side.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">Leftmost Derivation</span>
+          <span class="tag-pill">Parse Trees</span>
+          <span class="tag-pill">Ambiguity Proof</span>
+        </div>
+      </div>
+
+      <div class="grid-sidebar">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>📜 Grammar Definition</h3>
+          </div>
+          <div class="panel-card-body">
+            <div class="form-group">
+              <label for="m3a-preset-select">Grammar Preset:</label>
+              <select id="m3a-preset-select" class="select-input">
+                <option value="balanced_parens">Balanced Parentheses (S -> ( S ) | S S | ε)</option>
+                <option value="palindromes">Palindromes (S -> a S a | b S b | ε)</option>
+                <option value="equal_ab">Equal a's and b's (S -> a S b | b S a | ε)</option>
+                <option value="ambiguous_expr">Ambiguous Arithmetic (E -> E + E | E * E | a)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="m3a-grammar-editor">CFG Productions (one per line):</label>
+              <textarea id="m3a-grammar-editor" class="textarea-input" rows="5">S -> a S b | ε</textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="m3a-target-str">Target String w:</label>
+              <input type="text" id="m3a-target-str" class="input-text" value="aabb">
+            </div>
+
+            <div class="btn-group">
+              <button class="btn btn-primary" id="m3a-btn-derive">Generate Derivation & Tree</button>
+              <button class="btn btn-emerald" id="m3a-btn-check-ambig">Test Ambiguity</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- Parse Tree Canvas -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>🌳 Hierarchical Parse / Derivation Tree (SVG)</h3>
+              <span id="m3a-tree-status" style="font-size: 0.8rem; color: var(--accent-emerald);"></span>
+            </div>
+            <div class="panel-card-body">
+              <div class="canvas-wrapper" style="min-height: 380px;">
+                <svg id="m3a-tree-svg" class="tree-svg"></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Derivation History Sequence -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>📋 Leftmost Derivation (LMD) Sentential Forms</h3>
+            </div>
+            <div class="panel-card-body">
+              <div id="m3a-derivation-list" class="derivation-steps-box">
+                <!-- Injected lines -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Ambiguity Visualizer Output Container (shown when testing ambiguity) -->
+          <div id="m3a-ambiguity-container" class="panel-card" style="display: none;">
+            <div class="panel-card-header">
+              <h3>⚖️ Ambiguity Proof: Two Structurally Distinct Parse Trees</h3>
+              <span class="badge-status badge-rejected">AMBIGUOUS GRAMMAR</span>
+            </div>
+            <div class="panel-card-body">
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Because two distinct syntax trees exist for the exact same terminal string, this grammar produces semantic ambiguity (e.g. operator precedence collision between <code>+</code> and <code>*</code>).
+              </p>
+              <div class="grid-2col">
+                <div class="canvas-wrapper" style="min-height: 320px;">
+                  <svg id="m3a-ambig-tree1" class="tree-svg"></svg>
+                </div>
+                <div class="canvas-wrapper" style="min-height: 320px;">
+                  <svg id="m3a-ambig-tree2" class="tree-svg"></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 3B: CFG SIMPLIFICATION & CNF
+         ========================================== -->
+    <section id="tab-module3b" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Module 3B: Context-Free Grammar Simplification & Chomsky Normal Form (CNF)</h2>
+          <p>Systematically eliminate $\epsilon$-productions, unit productions ($A \to B$), useless symbols, and cascade productions into CNF ($A \to BC$ or $A \to a$).</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">ε-Removal</span>
+          <span class="tag-pill">Unit-Removal</span>
+          <span class="tag-pill">Useless Pruning</span>
+          <span class="tag-pill">CNF Normal Form</span>
+        </div>
+      </div>
+
+      <div class="grid-sidebar">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>✂️ Grammar Simplification Lab</h3>
+          </div>
+          <div class="panel-card-body">
+            <div class="form-group">
+              <label for="m3b-preset-select">Grammar Preset:</label>
+              <select id="m3b-preset-select" class="select-input">
+                <option value="with_all_defects">CFG with ε-rules, Unit rules, and Useless Symbols</option>
+                <option value="expression_grammar">Expression Grammar (E -> E+T | T, T -> T*F | F)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="m3b-input-grammar">Original Grammar:</label>
+              <textarea id="m3b-input-grammar" class="textarea-input" rows="7">S -> A B | a
+A -> ε
+B -> b
+C -> c</textarea>
+            </div>
+
+            <button class="btn btn-primary" id="m3b-btn-simplify" style="width: 100%;">Run Simplification & CNF Pipeline ➔</button>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>🔍 Step-by-Step Simplification Stages</h3>
+            </div>
+            <div class="panel-card-body">
+              <div id="m3b-stages-container" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Injected stages -->
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>✨ Final Chomsky Normal Form (CNF)</h3>
+              <span class="tag-pill">A ➔ BC | A ➔ a</span>
+            </div>
+            <div class="panel-card-body">
+              <div id="m3b-cnf-output" class="derivation-steps-box" style="max-height: 200px;">
+                <!-- Injected CNF -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 3C: PUSHDOWN AUTOMATA (PDA) SIMULATOR
+         ========================================== -->
+    <section id="tab-module3c" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Module 3C: Pushdown Automata (PDA) Simulator with Animated Stack</h2>
+          <p>Model the 7-tuple $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ recognizing non-regular context-free languages via dynamic stack push/pop operations.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">Stack Memory</span>
+          <span class="tag-pill">Non-Regular L</span>
+          <span class="tag-pill">Z₀ Base Symbol</span>
+        </div>
+      </div>
+
+      <div class="grid-sidebar">
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>🥞 PDA Controls</h3>
+          </div>
+          <div class="panel-card-body">
+            <div class="form-group">
+              <label for="m3c-preset-select">Select Language Recognized:</label>
+              <select id="m3c-preset-select" class="select-input">
+                <option value="an_bn">L = { aⁿ bⁿ | n ≥ 1 }</option>
+                <option value="wcwR">L = { w c wᴿ | w ∈ {a, b}* } (Palindromes with marker)</option>
+                <option value="balanced_parens">Balanced Parentheses (Dyck Language)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="m3c-input-string">Input String to Simulate:</label>
+              <input type="text" id="m3c-input-string" class="input-text" value="aabb">
+            </div>
+
+            <div class="btn-group" style="margin-bottom: 1rem;">
+              <button class="btn btn-primary" id="m3c-btn-step">Step ➔</button>
+              <button class="btn btn-secondary" id="m3c-btn-play">▶ Play</button>
+              <button class="btn btn-secondary" id="m3c-btn-reset">↺ Reset</button>
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <span id="m3c-status-badge" class="badge-status badge-running">READY</span>
+            </div>
+
+            <div style="margin-top: 1rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">
+              <p id="m3c-description-text"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Stack Cylinder Visualizer -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>📦 Vertical Stack Memory (Γ)</h3>
+              <span id="m3c-stack-height" style="font-size: 0.8rem; color: var(--accent-amber);">Height: 1</span>
+            </div>
+            <div class="panel-card-body">
+              <div id="m3c-stack-display" style="min-height: 380px;">
+                <!-- Stack frames rendered dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Trace Execution Log -->
+          <div class="panel-card">
+            <div class="panel-card-header">
+              <h3>📜 PDA Transition Step Trace</h3>
+              <span id="m3c-current-action" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan);"></span>
+            </div>
+            <div class="panel-card-body">
+              <div class="table-responsive" style="max-height: 380px;">
+                <table class="data-table" id="m3c-trace-table">
+                  <thead>
+                    <tr>
+                      <th>Step</th>
+                      <th>State</th>
+                      <th>Read</th>
+                      <th>Popped</th>
+                      <th>Pushed</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Injected rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 4: PUMPING LEMMA LABORATORIES
+         ========================================== -->
+    <section id="tab-pumping" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Theoretical Laboratories: Pumping Lemma Adversary Games</h2>
+          <p>Interactive proofs by contradiction demonstrating that languages are NOT regular (Module 2) or NOT context-free (Module 3).</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill">Adversary Game</span>
+          <span class="tag-pill">Pumping Exponent i</span>
+          <span class="tag-pill">Non-Regularity Proofs</span>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Regular Pumping Lemma -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>1️⃣ Regular Language Pumping Lemma: L = { aⁿ bⁿ }</h3>
+          </div>
+          <div class="panel-card-body">
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Suppose $L$ is regular. Then $\exists p \ge 1$ such that $\forall w \in L$ with $|w| \ge p$, $w$ can be decomposed into $w = xyz$ where $|xy| \le p, |y| \ge 1$, such that $x y^i z \in L$ for all $i \ge 0$.
+            </p>
+
+            <div class="form-group">
+              <label for="pl-reg-p">Pumping Length p:</label>
+              <input type="number" id="pl-reg-p" class="input-text" value="4" min="2" max="10">
+            </div>
+
+            <div class="form-group">
+              <label for="pl-reg-y-len">Adversary's Substring |y| (1 ≤ |y| ≤ p):</label>
+              <input type="number" id="pl-reg-y-len" class="input-text" value="2" min="1" max="4">
+            </div>
+
+            <div class="form-group">
+              <label for="pl-reg-i">Pumping Exponent i (slide to pump):</label>
+              <input type="range" id="pl-reg-i" min="0" max="5" value="0" style="width: 100%;">
+              <span id="pl-reg-i-val" style="font-family: var(--font-mono); color: var(--accent-amber);">i = 0 (Pumping Down)</span>
+            </div>
+
+            <div style="margin-top: 1.25rem;">
+              <div id="pl-reg-result" class="derivation-steps-box" style="font-size: 0.85rem; line-height: 1.8;">
+                <!-- Result dynamically rendered -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CFL Pumping Lemma -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>2️⃣ CFL Pumping Lemma: L = { aⁿ bⁿ cⁿ }</h3>
+          </div>
+          <div class="panel-card-body">
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 1rem;">
+              If $L$ is context-free, any string $w = a^p b^p c^p$ can be split into $u v x y z$ with $|vxy| \le p$ and $|vy| \ge 1$, so $u v^i x y^i z \in L$ for all $i \ge 0$.
+            </p>
+
+            <div class="form-group">
+              <label for="pl-cfl-p">Pumping Length p:</label>
+              <input type="number" id="pl-cfl-p" class="input-text" value="3" min="2" max="8">
+            </div>
+
+            <div class="form-group">
+              <label for="pl-cfl-opt">Adversary Substring vy Span:</label>
+              <select id="pl-cfl-opt" class="select-input">
+                <option value="ab">v in a's, y in b's (c's unchanged)</option>
+                <option value="bc">v in b's, y in c's (a's unchanged)</option>
+                <option value="a">both v and y in a's (b and c unchanged)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pl-cfl-i">Pumping Exponent i:</label>
+              <input type="range" id="pl-cfl-i" min="0" max="4" value="2" style="width: 100%;">
+              <span id="pl-cfl-i-val" style="font-family: var(--font-mono); color: var(--accent-amber);">i = 2 (Pumping Up)</span>
+            </div>
+
+            <div style="margin-top: 1.25rem;">
+              <div id="pl-cfl-result" class="derivation-steps-box" style="font-size: 0.85rem; line-height: 1.8;">
+                <!-- Result dynamically rendered -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 5: TEST SUITE & ACADEMIC PROJECT REPORT
+         ========================================== -->
+    <section id="tab-tests" class="tab-pane">
+      <div class="module-banner">
+        <div>
+          <h2>Automated Verification Matrix & University Project Report</h2>
+          <p>Live execution of 70 rigorous unit tests covering all 3 syllabus modules and interactive viewer for the academic report.</p>
+        </div>
+        <div class="module-tags">
+          <span class="tag-pill" id="badge-total-tests">70 / 70 Passing</span>
+          <span class="tag-pill">Printable HTML / PDF</span>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Live Browser Test Runner -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>🧪 Live In-Browser Test Runner</h3>
+            <button class="btn btn-emerald" id="btn-run-browser-tests">Run All Tests</button>
+          </div>
+          <div class="panel-card-body">
+            <div id="browser-tests-container" class="derivation-steps-box" style="max-height: 600px; font-size: 0.82rem;">
+              <p style="color: var(--text-muted);">Click "Run All Tests" to verify all algorithms live in your browser.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Report Viewer -->
+        <div class="panel-card">
+          <div class="panel-card-header">
+            <h3>📑 Academic Microproject Report</h3>
+            <div class="btn-group">
+              <a href="docs/FLAT_Project_Report.html" target="_blank" class="btn btn-secondary" style="text-decoration: none;">Open Report Tab ↗</a>
+              <a href="docs/FLAT_Project_Report.pdf" target="_blank" class="btn btn-primary" style="text-decoration: none;">Download PDF ⬇</a>
+            </div>
+          </div>
+          <div class="panel-card-body">
+            <div class="report-container" id="report-preview-box">
+              <h2>Formal Language and Automata Theory (FLAT) Microproject</h2>
+              <p><strong>Student:</strong> Kunal Yadav | <strong>Registration:</strong> 2411021060008 | <strong>Squad:</strong> 70</p>
+              <hr style="border-color: var(--border-color); margin: 1rem 0;">
+              <h3>Abstract</h3>
+              <p>
+                This microproject presents a complete, educational software visualizer for Formal Language and Automata Theory spanning all three curriculum modules: Formal Languages & RegEx (Module 1), Finite Automata & Minimization (Module 2), and Context-Free Grammars & Pushdown Automata (Module 3). Designed with zero external dependencies and rigorous theoretical rigor, the platform bridges abstract mathematical definitions with dynamic visual feedback.
+              </p>
+              <h3 style="margin-top: 1rem;">Key Methodologies Implemented</h3>
+              <ul>
+                <li><strong>Thompson's Construction:</strong> Translates regular expressions into $\epsilon$-NFA using compositional syntax sub-gadgets.</li>
+                <li><strong>Subset Construction:</strong> Uses powerset $\epsilon$-closure search to synthesize deterministic finite automata.</li>
+                <li><strong>Myhill-Nerode Table-Filling:</strong> Minimizes DFA states through systematic distinguishability matrix fixed-point iteration.</li>
+                <li><strong>Context-Free Grammar & PDA:</strong> Generates leftmost derivations, tree visualizations, ambiguity proofs, and pushdown stack traces.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>FLAT Microproject</strong> — Built for Academic Submission 2026 | Kunal Yadav (2411021060008)
+      </div>
+      <div>
+        Pure HTML5 / CSS3 / Vanilla ES6 | Zero Dependencies
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/engine/regex.js"></script>
+  <script src="js/engine/automata.js"></script>
+  <script src="js/engine/minimizer.js"></script>
+  <script src="js/engine/cfg.js"></script>
+  <script src="js/engine/pda.js"></script>
+  <script src="js/engine/pumping.js"></script>
+  <script src="js/ui/graph_renderer.js"></script>
+  <script src="js/ui/tree_renderer.js"></script>
+  <script src="js/ui/stack_renderer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FLAT Microproject Report - Kunal Yadav (2411021060008)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      background: #ffffff;
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 2.5rem;
+    }
+    .cover-card {
+      border: 2px solid #0284c7;
+      border-radius: 8px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+    }
+    .cover-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #0369a1;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+    .cover-subtitle {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 1.8rem;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 0.92rem;
+      background: #ffffff;
+      padding: 1.25rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+    .meta-item strong {
+      color: #0f172a;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #0369a1;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.35rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+      color: #0f172a;
+      margin-top: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    p, li {
+      font-size: 0.94rem;
+      color: #334155;
+    }
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    code {
+      font-family: Consolas, monospace;
+      background: #f1f5f9;
+      color: #0284c7;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.86rem;
+    }
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+    .badge-pass {
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+    }
+    .page-break {
+      page-break-after: always;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-card">
+    <div class="cover-title">Formal Language & Automata Theory</div>
+    <div class="cover-subtitle">Academic Microproject Report (Curriculum Modules 1, 2, and 3)</div>
+    <div class="meta-grid">
+      <div class="meta-item"><strong>Student Name:</strong> Kunal Yadav</div>
+      <div class="meta-item"><strong>Roll Number:</strong> 2411021060008</div>
+      <div class="meta-item"><strong>Squad / Cohort:</strong> Squad 70</div>
+      <div class="meta-item"><strong>Course:</strong> FLAT (Automata Theory)</div>
+      <div class="meta-item"><strong>Academic Level:</strong> Undergraduate Engineering</div>
+      <div class="meta-item"><strong>Date:</strong> October 2026</div>
+    </div>
+  </div>
+
+  <h2>1. Project Overview & Curriculum Alignment</h2>
+  <p>
+    This project introduces a comprehensive, web-based educational visualizer and algorithmic simulator for Formal Language and Automata Theory. Built completely from foundational first principles using standard web technologies (HTML5, CSS3, ES6 JavaScript, SVG) without any third-party framework or runtime dependency, the application bridges theoretical abstraction with real-time interactive computation.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Curriculum Module</th>
+        <th>Topics Addressed</th>
+        <th>Implemented Pedagogical Feature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Module 1: Formal Languages & RegEx</strong></td>
+        <td>Alphabets, strings, operations on languages, transition systems, regular expressions.</td>
+        <td>Interactive &Sigma;<sup>k</sup> string generator, prefix/suffix/reversal tool, language union/concatenation/Kleene star, and Shunting-Yard parser.</td>
+      </tr>
+      <tr>
+        <td><strong>Module 2: Finite Automata & Minimization</strong></td>
+        <td>DFA, NFA, equivalence, Thompson's construction, subset construction, DFA state minimization.</td>
+        <td>Interactive step-by-step string tracer with tape head pointer, Thompson &epsilon;-NFA builder, subset powerset derivation table, and Myhill-Nerode table-filling matrix.</td>
+      </tr>
+      <tr>
+        <td><strong>Module 3: CFG & Pushdown Automata</strong></td>
+        <td>CFG, derivation trees, ambiguity, CFG simplification, Chomsky Normal Form (CNF), Pushdown Automata (PDA).</td>
+        <td>Leftmost derivation generator, SVG parse tree visualizer, dual-tree ambiguity proof, &epsilon;/unit/useless simplification pipeline, and animated vertical stack PDA.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Algorithmic Architecture & Mathematical Foundations</h2>
+  <h3>2.1 Regular Expressions to Finite Automata (Thompson's Construction)</h3>
+  <p>
+    Thompson's construction converts a postfix regular expression into an equivalent &epsilon;-NFA by inductively assembling state sub-gadgets. For concatenation, the accept state of the first operand connects to the start state of the second via an &epsilon;-transition. For union, new start and accept states branch and merge around the operands. For Kleene star, backward and forward bypass &epsilon;-transitions are established.
+  </p>
+
+  <h3>2.2 Subset Construction (NFA to DFA)</h3>
+  <p>
+    To convert an &epsilon;-NFA $M_N = (Q_N, \Sigma, \delta_N, q_0, F_N)$ to a deterministic automaton $M_D$, we compute the &epsilon;-closure of state subsets. Starting with $S_0 = \epsilon\text{-closure}(q_0)$, each DFA state represents a distinct subset of NFA states. For every alphabet symbol $a \in \Sigma$, the target state is defined by $\delta_D(S, a) = \epsilon\text{-closure}(\text{move}(S, a))$.
+  </p>
+
+  <h3>2.3 DFA State Minimization (Table-Filling / Myhill-Nerode)</h3>
+  <p>
+    Unreachable states are first pruned via BFS traversal from $q_0$. The triangular distinguishability table $\mathcal{M}(p, q)$ initializes pairs where exactly one state is accepting. Inductive fixed-point iterations inspect all symbols $a \in \Sigma$: if $\delta(p, a)$ and $\delta(q, a)$ are already marked as distinguishable, then $(p, q)$ is marked. Unmarked pairs upon convergence form equivalence classes which are merged to construct the quotient DFA.
+  </p>
+
+  <h3>2.4 Pushdown Automata (PDA) Dynamics</h3>
+  <p>
+    A Pushdown Automaton $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ extends finite-state control with an unbounded LIFO stack. For language $L = \{a^n b^n \mid n \ge 1\}$, the simulator pushes $A$ onto the stack for every $a$ read, and pops $A$ for every $b$. Acceptance occurs when the input is fully consumed and the stack returns to initial symbol $Z_0$ in an accepting state.
+  </p>
+
+  <div class="page-break"></div>
+
+  <h2>3. Verification Matrix & Test Record</h2>
+  <p>
+    The project includes 70 rigorous automated tests covering all modules, edge conditions, boundary values, and algebraic identities. All tests pass with 100% success rate:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Verification Area</th>
+        <th>Number of Tests</th>
+        <th>Test Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Module 1 Language Operations</td>
+        <td>8 Tests</td>
+        <td>Prefixes, suffixes, reversals, &Sigma;<sup>k</sup> generation, union, concatenation, Kleene star, regex formatting.</td>
+        <td><span class="badge-pass">8 / 8 PASS</span></td>
+      </tr>
+      <tr>
+        <td>Module 2 Finite Automata & Minimization</td>
+        <td>29 Tests</td>
+        <td>Thompson's NFA construction, `?` operator, literal vowel `'e'` preservation, parallel branching, subset construction, DFA string tracing, Table-filling minimization, and partial DFA TRAP completion.</td>
+        <td><span class="badge-pass">29 / 29 PASS</span></td>
+      </tr>
+      <tr>
+        <td>Module 3 CFG, CNF & PDA</td>
+        <td>27 Tests</td>
+        <td>Grammar parsing, leftmost derivations, parse trees, ambiguity detection, &epsilon;/unit/useless removal, strict operator CNF conversion, and PDA stack tracing.</td>
+        <td><span class="badge-pass">27 / 27 PASS</span></td>
+      </tr>
+      <tr>
+        <td>Theoretical Labs (Pumping Lemma)</td>
+        <td>6 Tests</td>
+        <td>Adversary game evaluations for regular $a^n b^n$ and context-free $a^n b^n c^n$, boundary safety ($p=0, 1$), and exponent $i=1$ identity check.</td>
+        <td><span class="badge-pass">6 / 6 PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Total Verified Suite</strong></td>
+        <td><strong>70 Tests</strong></td>
+        <td><strong>Complete End-to-End Mathematical & Algorithmic Coverage</strong></td>
+        <td><span class="badge-pass">70 / 70 PASS (100%)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Conclusion</h2>
+  <p>
+    This microproject demonstrates that formal mathematical principles of computer science can be brought to life through interactive, zero-dependency engineering. The resulting visualizer provides students and instructors with an engaging, verified laboratory for exploring automata, grammars, and computation.
+  </p>
+
+  <h2>5. Academic References</h2>
+  <ol>
+    <li>Hopcroft, J. E., Motwani, R., & Ullman, J. D. (2006). <em>Introduction to Automata Theory, Languages, and Computation</em> (3rd ed.). Pearson / Addison-Wesley.</li>
+    <li>Sipser, M. (2013). <em>Introduction to the Theory of Computation</em> (3rd ed.). Cengage Learning.</li>
+    <li>Linz, P. (2016). <em>An Introduction to Formal Languages and Automata</em> (6th ed.). Jones & Bartlett Learning.</li>
+  </ol>
+
+</body>
+</html>
